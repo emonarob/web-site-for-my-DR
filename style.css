@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: radial-gradient(circle, #000000, #1b1b1b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.heart-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 2s ease-in;
+}
+
+.heart {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+    }
+    to {
+        text-shadow: 0 0 20px pink, 0 0 40px pink, 0 0 60px pink, 0 0 80px pink;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .heart {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heart {
+        font-size: 1.5rem;
+    }
+}
